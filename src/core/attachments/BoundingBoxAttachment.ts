@@ -1,3 +1,6 @@
+import { VertexAttachment } from "./Attachment";
+import { Color } from "../Utils";
+
 /******************************************************************************
  * Spine Runtimes Software License
  * Version 2.5
@@ -29,12 +32,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export class BoundingBoxAttachment extends VertexAttachment {
-        color = new Color(1, 1, 1, 1);
 
-        constructor(name: string) {
-            super(name);
-        }
+export class BoundingBoxAttachment extends VertexAttachment {
+    color = new Color(1, 1, 1, 1);
+
+    constructor(name: string) {
+        super(name);
     }
 }

@@ -1,3 +1,6 @@
+import { Skeleton } from "./Skeleton";
+import { Vector2, Color } from "./Utils";
+
 /******************************************************************************
  * Spine Runtimes Software License v2.5
  *
@@ -28,10 +31,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-	export interface VertexEffect {
-		begin(skeleton: Skeleton): void;
-		transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void;
-		end(): void;
-	}
+
+export interface VertexEffect {
+	begin(skeleton: Skeleton): void;
+	transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void;
+	end(): void;
 }

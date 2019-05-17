@@ -1,3 +1,7 @@
+import { MathUtils, Vector2, Color } from "../Utils";
+import { VertexEffect } from "../VertexEffect";
+import { Skeleton } from "../Skeleton";
+
 /******************************************************************************
  * Spine Runtimes Software License v2.5
  *
@@ -28,25 +32,24 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-	export class JitterEffect implements VertexEffect {
-		jitterX = 0;
-		jitterY = 0;
 
-		constructor (jitterX: number, jitterY: number) {
-			this.jitterX = jitterX;
-			this.jitterY = jitterY;
-		}
+export class JitterEffect implements VertexEffect {
+	jitterX = 0;
+	jitterY = 0;
 
-		begin(skeleton: Skeleton): void {
-		}
+	constructor (jitterX: number, jitterY: number) {
+		this.jitterX = jitterX;
+		this.jitterY = jitterY;
+	}
 
-		transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void {
-			position.x += MathUtils.randomTriangular(-this.jitterX, this.jitterY);
-			position.y += MathUtils.randomTriangular(-this.jitterX, this.jitterY);
-		}
+	begin(skeleton: Skeleton): void {
+	}
 
-		end(): void {
-		}
+	transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void {
+		position.x += MathUtils.randomTriangular(-this.jitterX, this.jitterY);
+		position.y += MathUtils.randomTriangular(-this.jitterX, this.jitterY);
+	}
+
+	end(): void {
 	}
 }

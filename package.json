@@ -9,8 +9,8 @@
     "Ivan Popelyshev <ivan.popelyshev@gmail.com>",
     "Yevhenii Huselietov <d46k16@gmail.com>"
   ],
-  "main": "./bin/pixi-spine.js",
-  "types": "./bin/pixi-spine.d.ts",
+  "main": "bin/Spine.js",
+  "types": "bin/Spine.d.ts",
   "homepage": "https://github.com/pixijs/pixi-spine",
   "bugs": {
     "url": "https://github.com/pixijs/pixi-spine/issues"
@@ -26,8 +26,7 @@
     "start": "parallelshell \"yarn watch\"",
     "watch": "tsc -w",
     "prebuild": "yarn cleanup",
-    "make:dts": "node scripts/make_dts.js",
-    "build": "tsc && yarn make:dts",
+    "build": "tsc",
     "docs": "typedoc --out ./docs/ --readme README.md ./src/",
     "check:browserify": "yarn checkpack browserify -e test/checkpack.ts",
     "check:webpack": "yarn checkpack webpack -e test/checkpack.ts",
@@ -53,5 +52,8 @@
     "ts-helpers": "~1.1.2",
     "typedoc": "^0.9.0",
     "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "pixi.js": "5.0.2"
   }
 }

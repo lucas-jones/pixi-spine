@@ -4,7 +4,7 @@
 
 Spine implementation for PixiJS v5.
 
-For v4 please see [v4.x branch](https://github.com/pixijs/pixi-spine/tree/v4.x) and use npm version `1.5.21` 
+For v4 please see [v4.x branch](https://github.com/pixijs/pixi-spine/tree/v4.x) and use npm version `1.5.21`
 
 ## Usage
 
@@ -13,12 +13,22 @@ For v4 please see [v4.x branch](https://github.com/pixijs/pixi-spine/tree/v4.x) 
 If you are just including the built files, pixi spine adds itself to a `PIXI` namespace:
 
 ```js
-new PIXI.spine.Spine();
+import { Spine, AtlasParser } from 'pixi-spine';
+
+Loader.registerPlugin(AtlasParser);
+
+const spine = new Spine(...);
 ```
 
 ### Basic example
 
 ```js
+import { Application } from 'pixi.js'
+import { Spine, AtlasParser } from 'pixi-spine';
+
+// Ensure AtlasParser is registered
+Loader.registerPlugin(AtlasParser);
+
 var app = new PIXI.Application();
 
 document.body.appendChild(app.view);
@@ -26,20 +36,20 @@ document.body.appendChild(app.view);
 app.loader
     .add('spineCharacter', 'spine-data-1/HERO.json')
     .load(function (loader, resources) {
-        var animation = new PIXI.spine.Spine(resources.spineCharacter.spineData);
+        var animation = new Spine(resources.spineCharacter.spineData);
 
         // add the animation to the scene and render...
         app.stage.addChild(animation);
-        
-        // run 
-        var animation = new PIXI.spine.Spine(spineBoyData);
+
+        // run
+        var animation = new Spine(spineBoyData);
         if (animation.state.hasAnimation('run')) {
             // run forever, little boy!
             animation.state.setAnimation(0, 'run', true);
             // dont run too fast
             animation.state.timeScale = 0.1;
         }
-        
+
         app.start();
     });
 ```
@@ -59,7 +69,7 @@ There's "bin/pixi-spine.d.ts" file, you can use it.
 
 ## Spine version
 
-We aim to support the latest stable version of spine. 
+We aim to support the latest stable version of spine.
 
 If you are below Spine 3.5, please please enable "beta updates" and re-export everything from the spine editor.
 

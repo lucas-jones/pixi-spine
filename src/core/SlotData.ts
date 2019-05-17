@@ -1,3 +1,7 @@
+import { BoneData } from "./BoneData";
+import { Color } from "./Utils";
+import { BlendMode } from "./BlendMode";
+
 /******************************************************************************
  * Spine Runtimes Software License
  * Version 2.5
@@ -29,23 +33,21 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export class SlotData {
-        index: number;
-        name: string;
-        boneData: BoneData;
-        color = new Color(1, 1, 1, 1);
-        darkColor: Color;
-        attachmentName: string;
-        blendMode: BlendMode;
+export class SlotData {
+    index: number;
+    name: string;
+    boneData: BoneData;
+    color = new Color(1, 1, 1, 1);
+    darkColor: Color;
+    attachmentName: string;
+    blendMode: BlendMode;
 
-        constructor (index: number, name: string, boneData: BoneData) {
-            if (index < 0) throw new Error("index must be >= 0.");
-            if (name == null) throw new Error("name cannot be null.");
-            if (boneData == null) throw new Error("boneData cannot be null.");
-            this.index = index;
-            this.name = name;
-            this.boneData = boneData;
-        }
+    constructor (index: number, name: string, boneData: BoneData) {
+        if (index < 0) throw new Error("index must be >= 0.");
+        if (name == null) throw new Error("name cannot be null.");
+        if (boneData == null) throw new Error("boneData cannot be null.");
+        this.index = index;
+        this.name = name;
+        this.boneData = boneData;
     }
 }
