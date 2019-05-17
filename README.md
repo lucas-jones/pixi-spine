@@ -5,17 +5,6 @@
 
 ## Usage
 
-### Prebuilt Files
-
-```js
-import { Spine, AtlasParser } from 'pixi-spine';
-
-// You can also register AtlasParser plugin manually
-Loader.registerPlugin(AtlasParser);
-
-const spine = new Spine(...);
-```
-
 ### Basic example
 
 ```js
