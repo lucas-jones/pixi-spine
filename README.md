@@ -10,6 +10,7 @@
 ```js
 import { Spine, AtlasParser } from 'pixi-spine';
 
+// You can also register AtlasParser plugin manually
 Loader.registerPlugin(AtlasParser);
 
 const spine = new Spine(...);
@@ -18,32 +19,26 @@ const spine = new Spine(...);
 ### Basic example
 
 ```js
-import { Application } from 'pixi.js'
-import { Spine, AtlasParser } from 'pixi-spine';
+import { Application, Loader, IResourceDictionary } from 'pixi.js'
+import { Spine } from 'pixi-spine';
 
-// Ensure AtlasParser is registered
-Loader.registerPlugin(AtlasParser);
-
-var app = new PIXI.Application();
+var app = new Application();
 
 document.body.appendChild(app.view);
 
 app.loader
-    .add('spineCharacter', 'spine-data-1/HERO.json')
-    .load(function (loader, resources) {
-        var animation = new Spine(resources.spineCharacter.spineData);
+    .add('spine', 'spine.json')
+    .load(function (loader: Loader, resources: IResourceDictionary) {
+		var spine = new Spine(resources['spine'].spineData);
 
-        // add the animation to the scene and render...
-        app.stage.addChild(animation);
+        // Add the spine to the scene and render...
+        app.stage.addChild(spine);
 
-        // run
-        var animation = new Spine(spineBoyData);
-        if (animation.state.hasAnimation('run')) {
-            // run forever, little boy!
-            animation.state.setAnimation(0, 'run', true);
-            // dont run too fast
-            animation.state.timeScale = 0.1;
-        }
+		// Position
+		spine.position.set(app.screen.width / 2, app.screen.height / 2);
+		spine.scale.set(0.5, 0.5);
+
+		spine.state.setAnimation(0, "RUN", true);
 
         app.start();
     });
