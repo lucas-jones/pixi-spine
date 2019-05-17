@@ -1,3 +1,6 @@
+import { BoneData } from "./BoneData";
+import { SlotData } from "./SlotData";
+
 /******************************************************************************
  * Spine Runtimes Software License
  * Version 2.5
@@ -29,35 +32,34 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export class PathConstraintData {
-        name: string;
-        order = 0;
-        bones = new Array<BoneData>();
-        target: SlotData;
-        positionMode: PositionMode;
-        spacingMode: SpacingMode;
-        rotateMode: RotateMode;
-        offsetRotation: number;
-        position: number;
-        spacing: number;
-        rotateMix: number;
-        translateMix: number;
 
-        constructor(name: string) {
-            this.name = name;
-        }
-    }
+export class PathConstraintData {
+    name: string;
+    order = 0;
+    bones = new Array<BoneData>();
+    target: SlotData;
+    positionMode: PositionMode;
+    spacingMode: SpacingMode;
+    rotateMode: RotateMode;
+    offsetRotation: number;
+    position: number;
+    spacing: number;
+    rotateMix: number;
+    translateMix: number;
 
-    export enum PositionMode {
-        Fixed, Percent
+    constructor(name: string) {
+        this.name = name;
     }
+}
 
-    export enum SpacingMode {
-        Length, Fixed, Percent
-    }
+export enum PositionMode {
+    Fixed, Percent
+}
 
-    export enum RotateMode {
-        Tangent, Chain, ChainScale
-    }
+export enum SpacingMode {
+    Length, Fixed, Percent
+}
+
+export enum RotateMode {
+    Tangent, Chain, ChainScale
 }

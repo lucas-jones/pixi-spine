@@ -1,3 +1,7 @@
+import { VertexAttachment } from "./Attachment";
+import { SlotData } from "../SlotData";
+import { Color } from "../Utils";
+
 /******************************************************************************
  * Spine Runtimes Software License v2.5
  *
@@ -28,15 +32,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export class ClippingAttachment extends VertexAttachment {
-        endSlot: SlotData;
 
-        // Nonessential.
-        color = new Color(0.2275, 0.2275, 0.8078, 1); // ce3a3aff
+export class ClippingAttachment extends VertexAttachment {
+    endSlot: SlotData;
 
-        constructor(name: string) {
-            super(name);
-        }
+    // Nonessential.
+    color = new Color(0.2275, 0.2275, 0.8078, 1); // ce3a3aff
+
+    constructor(name: string) {
+        super(name);
     }
 }

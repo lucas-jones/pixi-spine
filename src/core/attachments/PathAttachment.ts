@@ -1,3 +1,6 @@
+import { VertexAttachment } from "./Attachment";
+import { Color } from "../Utils";
+
 /******************************************************************************
  * Spine Runtimes Software License
  * Version 2.5
@@ -29,15 +32,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export class PathAttachment extends VertexAttachment {
-        lengths: Array<number>;
-        closed = false;
-        constantSpeed = false;
-        color = new Color(1, 1, 1, 1);
 
-        constructor(name: string) {
-            super(name);
-        }
+export class PathAttachment extends VertexAttachment {
+    lengths: Array<number>;
+    closed = false;
+    constantSpeed = false;
+    color = new Color(1, 1, 1, 1);
+
+    constructor(name: string) {
+        super(name);
     }
 }

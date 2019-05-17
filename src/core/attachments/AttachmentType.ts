@@ -29,8 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export enum AttachmentType {
-        Region, BoundingBox, Mesh, LinkedMesh, Path, Point
-    }
+
+export enum AttachmentType {
+    Region, BoundingBox, Mesh, LinkedMesh, Path, Point
 }

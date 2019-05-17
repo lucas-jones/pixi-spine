@@ -29,11 +29,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-namespace pixi_spine.core {
-    export enum BlendMode {
-        Normal = 0,
-        Additive = 1,
-        Multiply = 2,
-        Screen = 3
-    }
+
+export enum BlendMode {
+    Normal = 0,
+    Additive = 1,
+    Multiply = 2,
+    Screen = 3
 }
