@@ -1,16 +1,11 @@
 # pixi-spine
 
-[![Build Status](https://travis-ci.org/pixijs/pixi-spine.svg?branch=master)](https://travis-ci.org/pixijs/pixi-spine)
-
-Spine implementation for PixiJS v5.
-
-For v4 please see [v4.x branch](https://github.com/pixijs/pixi-spine/tree/v4.x) and use npm version `1.5.21`
+#### This is a proof of concept to make `pixi-spine` work with the ES6 imports.
+#### This also removes `PIXI` been use as a global.
 
 ## Usage
 
 ### Prebuilt Files
-
-If you are just including the built files, pixi spine adds itself to a `PIXI` namespace:
 
 ```js
 import { Spine, AtlasParser } from 'pixi-spine';
@@ -53,45 +48,3 @@ app.loader
         app.start();
     });
 ```
-
-## Want to go advanced?
-
-Read our [docs](examples/index.md).
-
-## Using webpack or browserify?
-
-Our library is tested for integration with webpack and browserify,
-check [our travis config](.travis.yml) and [checkpack](http://github.com/cursedcoder/checkpack).
-
-## Typescript
-
-There's "bin/pixi-spine.d.ts" file, you can use it.
-
-## Spine version
-
-We aim to support the latest stable version of spine.
-
-If you are below Spine 3.5, please please enable "beta updates" and re-export everything from the spine editor.
-
-According to spine runtime license, you can use runtime only if you have bought the editor, so exporting latest versions of animations shouldn't be a problem for you.
-
-## Building
-
-You will need to have [node][node] setup on your machine.
-
-Make sure you have [yarn][yarn] installed:
-
-    npm install -g yarn
-
-Then you can install dependencies and build:
-
-```bash
-yarn
-yarn build
-```
-
-That will output the built distributables to `./bin`.
-
-[node]:             https://nodejs.org/
-[typescript]:       https://www.typescriptlang.org/
-[yarn]:             https://yarnpkg.com
