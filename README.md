@@ -9,7 +9,10 @@
 
 ```js
 import { Application, Loader, IResourceDictionary } from 'pixi.js'
-import { Spine } from 'pixi-spine';
+import { Spine, AtlasParser } from 'pixi-spine';
+
+// This is important to ensure Pixi loaders know how to load Spine files
+Loader.registerPlugin(AtlasParser);
 
 var app = new Application();
 
